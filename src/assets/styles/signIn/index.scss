@@ -1,0 +1,109 @@
+.MuiContainer-root {
+  &.sign-in {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: $white-85;
+  }
+}
+
+.sign-in {
+  &-container {
+    height: 100%;
+    background: #2F2D41;
+  }
+
+  &-title.MuiTypography-root {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &-text-field {
+    background: transparent;
+    .MuiInputBase-root {
+      margin-bottom: 2rem;
+    }
+
+    svg {
+      color: $white-85;
+    }
+
+    input {
+      font-size: 1.1rem;
+      color: $white-85;
+      padding: 6px 0;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus
+    input:-webkit-autofill,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus,
+    input:-webkit-autofill::first-line {
+      border: 0;
+      font-size: 1.1rem;
+      font-family: $main-font;
+      caret-color: $white-85;
+      -webkit-text-fill-color: $white-85;
+      -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+      transition: background-color 5000s ease-in-out 0s;
+      background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,174,255,0.04) 50%,rgba(255,255,255,0) 51%,rgba(0,174,255,0.03) 100%);
+    }
+
+    .MuiInput-underline {
+      padding: 5px 0;
+      &:before,
+      &:after {
+        border-color: $white-85 !important;
+        border-width: 1px !important;
+      }
+    }
+  }
+
+  &-remember {
+    .MuiTypography-body1 {
+      font-size: 1rem;
+    }
+
+    .MuiCheckbox-root {
+      color: $white-85;
+      padding: 9px 9px 10px 9px;
+    }
+  }
+
+  &-forgot {
+    text-decoration: none;
+    color: $white-85;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &-button-label {
+    text-transform: capitalize;
+    font-size: 1.2rem;
+  }
+
+  &-create {
+    margin: 2rem 0;
+    text-align: center;
+    font-size: 1.15rem;
+    p {
+      color: $white-85;
+      line-height: 1.5em;
+      font-size: inherit;
+    }
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
