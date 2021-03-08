@@ -1,5 +1,5 @@
 .MuiContainer-root {
-  &.sign-in {
+  &.login {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -7,7 +7,7 @@
   }
 }
 
-.sign-in {
+.login {
   &-container {
     height: 100%;
     background: #2F2D41;
@@ -16,6 +16,10 @@
   &-title.MuiTypography-root {
     text-align: center;
     margin-bottom: 3rem;
+  }
+
+  &-content {
+    max-width: 420px;
   }
 
   &-text-field {
@@ -104,6 +108,14 @@
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+
+  &-terms {
+    color: var(--primary-color);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
     }
   }
 }

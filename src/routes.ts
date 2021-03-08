@@ -1,7 +1,8 @@
 import React, { LazyExoticComponent } from 'react';
 import { RouteProps } from 'react-router-dom';
 
-const SignIn = React.lazy(() => import('./routes/signIn'));
+import SignIn from './routes/SignIn';
+import SignUp from './routes/SignUp';
 
 interface RouteType {
   id: number;
@@ -11,7 +12,8 @@ interface RouteType {
 }
 
 const routes: Array<RouteType> = [
-  { id: 1, path: '/sign-in', component: SignIn },
+  { id: 0, path: '/sign-in', component: SignIn },
+  { id: 1, path: '/sign-up', component: SignUp },
 ];
 
 export default routes;

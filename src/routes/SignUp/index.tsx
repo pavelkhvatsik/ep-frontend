@@ -14,24 +14,38 @@ import {
 
 import Email from '@material-ui/icons/Email';
 import Lock from '@material-ui/icons/Lock';
+import Person from '@material-ui/icons/Person';
 
 import logo from '../../assets/img/acade.svg';
 
-const SignIn = (): JSX.Element => {
+const SignUp = (): JSX.Element => {
   return (
-    <Container className="sign-in-container" maxWidth={false}>
-      <Container className="sign-in" maxWidth="xl">
+    <Container className="login-container" maxWidth={false}>
+      <Container className="login" maxWidth="xl">
         <Grid container className="full-height" alignItems="center">
           <Grid container justify="center">
-            <Grid item>
-              <Typography className="sign-in-title">
+            <Grid item className="login-content">
+              <Typography className="login-title">
                 <img src={logo} alt="acade-logo" width={280} />
               </Typography>
 
               <form>
                 <TextField
                   fullWidth
-                  className="sign-in-text-field"
+                  className="login-text-field"
+                  placeholder="Username"
+                  name="username"
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <Person />
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+                <TextField
+                  fullWidth
+                  className="login-text-field"
                   placeholder="Email Address"
                   name="email"
                   InputProps={{
@@ -44,7 +58,7 @@ const SignIn = (): JSX.Element => {
                 />
                 <TextField
                   fullWidth
-                  className="sign-in-text-field"
+                  className="login-text-field"
                   placeholder="Password"
                   name="password"
                   type="password"
@@ -60,15 +74,17 @@ const SignIn = (): JSX.Element => {
                 <Box display="flex" alignItems="center" mb={2.5}>
                   <Grid item xs>
                     <FormControlLabel
-                      classes={{ root: 'sign-in-remember' }}
+                      classes={{ root: 'login-remember' }}
                       control={<Checkbox value="remember" color="secondary" />}
-                      label="Remember me"
+                      label={
+                        <>
+                          <span>I have read and agree to the</span>{' '}
+                          <Link to="./sign-up" className="login-terms">
+                            Terms of Service
+                          </Link>
+                        </>
+                      }
                     />
-                  </Grid>
-                  <Grid item>
-                    <Link to="./" className="sign-in-forgot">
-                      Forgot password?
-                    </Link>
                   </Grid>
                 </Box>
 
@@ -78,16 +94,16 @@ const SignIn = (): JSX.Element => {
                   variant="contained"
                   color="secondary"
                   classes={{
-                    label: 'sign-in-button-label',
+                    label: 'login-button-label',
                   }}
                 >
-                  Login
+                  Create Account
                 </Button>
               </form>
 
-              <Box className="sign-in-create">
-                <Typography>Don&apos;t have an account yet?</Typography>
-                <Link to="./">Create Account</Link>
+              <Box className="login-create">
+                <Typography>Already have an account?</Typography>
+                <Link to="./sign-in">Sign in</Link>
               </Box>
             </Grid>
           </Grid>
@@ -97,4 +113,4 @@ const SignIn = (): JSX.Element => {
   );
 };
 
-export default SignIn;
+export default SignUp;
